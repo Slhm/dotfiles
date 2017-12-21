@@ -1,8 +1,5 @@
 #! /bin/bash
 
-#rate=($(curl -sS 'https://api.coindesk.com/v1/bpi/currentprice/USD.json' | jq  '.bpi.USD.rate'))
-
-#printf '%s\n' ${rate}
 if [ $# -eq 0 ]
 then
 	val='bitcoin'
@@ -10,5 +7,4 @@ else
 	val=$1
 fi
 
-rate2=($(curl -sS 'https://api.coinmarketcap.com/v1/ticker/'))
 curl -sS 'https://api.coinmarketcap.com/v1/ticker/' | jq --arg val1 "$val" '.[] | select(.id == $val1) | .price_usd' | egrep -o '[0-9,.]{2,4}+'
