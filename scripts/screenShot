@@ -1,0 +1,5 @@
+#!/bin/bash
+
+NOW=$(date +"%Y-%m-%d-%T")
+
+import -window root ~/Pictures/ScreenShots/$NOW.png
