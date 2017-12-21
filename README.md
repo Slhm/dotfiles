@@ -1,2 +1,2 @@
 # dotfiles
-linux dotfiles(ubuntu, i3-gaps, polybar)
+linux configfiles(ubuntu, i3-gaps, polybar)
