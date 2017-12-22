@@ -16,13 +16,14 @@ bindsym $mod+l exec i3lock
 #wallpaper
 exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/fogForest.jpg
 
-#start up sftwr 
-exec --no-startup-id private internet access
-exec --no-startup-id dropbox
+#start up software
+exec --no-startup-id $HOME/drit/pia.sh
 exec --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always compton -f
+
+#natural scrolling on laptop
 exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
 
-#natural scrolling
 
 #colors
 set $text-color		#000000
@@ -69,14 +70,14 @@ set $workspace10 "10"
 gaps inner 10
 gaps outer 10
 #smart_gaps on
-
-
 new_window pixel
 
 bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu'
 #bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 500 -opacity "80" -bw 0 -bc "$color00" -bg "$color01" -fg "$color07" -hlbg "$color09" -columns 2 -hlfg "#9575cd"
 
-exec_always compton -f
+
+#print screen control
+bindsym --release Print exec $HOME/.config/i3/screenShot 
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
