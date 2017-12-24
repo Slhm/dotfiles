@@ -1,3 +1,4 @@
+#
 # ᛁᛊᚨ theme (v0.1)
 # 
 # Should you change your keyboard layout some time, delete
@@ -10,11 +11,11 @@ set $mod Mod4
 ################################################################
 # Satanic configurations begins here..
 
-bindsym $mod+l exec i3lock
+bindsym $mod+l exec $HOME/.config/i3/laakk
 
 
 #wallpaper
-exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/fogForest.jpg
+exec --no-startup-id feh --bg-fill $HOME/Pictures/Wallpapers/fogForest.jpg
 
 #start up software
 exec --no-startup-id $HOME/drit/pia.sh
