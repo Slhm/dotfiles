@@ -1,10 +1,49 @@
 #! /bin/bash
 
+#bitFetcher is a command line script for fetching crypto prices and percent changes
+#first argument is the id of the chosen crypto, usually the name in lowercase
+#add -c as second argument returns the percent change for the last 24h
+#add -p as third arg for polybar percent change color
+
+#no argument returns bitcoin price
 if [ $# -eq 0 ]
 then
 	val='bitcoin'
 else
 	val=$1
+	chV=$2
+	poly=$3
 fi
 
-curl -sS 'https://api.coinmarketcap.com/v1/ticker/' | jq --arg val1 "$val" '.[] | select(.id == $val1) | .price_usd' | egrep -o '[0-9,.]{2,4}+'
+#first argument returns a chose cryptos price
+if [ $# -le 1 ]
+then
+	curl -sS 'https://api.coinmarketcap.com/v1/ticker/' | jq --arg val1 "$val" '.[] | select(.id == $val1) | .price_usd' | egrep -o '[0-9,.]{2,4}+'
+
+# '-c' as second argument return the percent change last 24h 
+elif [ "$chV" == "-c" ]
+then
+	pr=$(curl -sS 'https://api.coinmarketcap.com/v1/ticker/' | jq --arg val1 "$val" '.[] | select(.id == $val1) | .price_usd' | egrep -o '[0-9,.]{2,4}+')
+	ch=$(curl -sS 'https://api.coinmarketcap.com/v1/ticker/' | jq --arg val1 "$val" '.[] | select(.id == $val1) | .percent_change_24h' | egrep -o '[0-9,.-]{2,4}+')
+
+	gt=$(echo "$ch > 0" | bc -q)
+	if [[ $poly == "-p" ]]
+	then
+		if [ $gt -eq 1 ]
+		then
+			echo -e "$val: "\$"$pr %{F#0f0} $ch%"
+		else
+			echo -e "$val: "\$"$pr %{F#f00} $ch%"
+		fi
+	else
+		GREEN='\033[0;032m'
+		RED='\033[0;031.'
+		NC='\033[0m'
+		if [ $gt -eq 1 ]
+		then
+			echo -e "$pr ${GREEN}$ch${NC}%"
+		else
+			echo -e "$pr ${RED}$ch${NC}%"
+		fi
+	fi
+fi

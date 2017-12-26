@@ -184,10 +184,8 @@ bar-empty-foreground = ${colors.foreground-alt}
 
 [module/bitFetcher]
 type = custom/script
-format-prefix = "$"
-interval = 5
-exec =  ~/.config/polybar/bitFetcher
-click-left = ~/.config/polybar/bitFetcher
+interval = 300
+exec =  ~/.config/polybar/bitFetcher bitcoin -c -p
 
 [module/iota]
 type = custom/script

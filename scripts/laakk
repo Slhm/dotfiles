@@ -2,8 +2,8 @@
 
 IMG=/tmp/lol.png
 import -window root $IMG
-convert $IMG -swirl 60 -spread 2 $IMG
+convert $IMG  -spread 5 $IMG
 
-i3lock -i $IMG
+i3lock -i $IMG -f
 
 rm $IMG

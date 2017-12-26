@@ -3,13 +3,14 @@
 
 ## scripts
 #### bitFetcher
-fetches crypto prices from coinmarketcaps api.  
+fetches crypto prices from coinmarketcaps api.
 ```
 ./bitFetcher iota
 ```
 returns the current iota price
+'iota -c' returns the 24h % change as well. 'iota -c -p' returns the name, price, and % change in polybar color formatting.
 
-no argument returns bitcoin price. a module for polybar is in the polybar config.
+check https://api.coinmarketcap.com/v1/ticker/ for IDs
 
 
 ### dependencies
