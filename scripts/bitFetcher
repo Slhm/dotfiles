@@ -37,7 +37,7 @@ then
 		fi
 	else
 		GREEN='\033[0;032m'
-		RED='\033[0;031.'
+		RED='\033[0;031m'
 		NC='\033[0m'
 		if [ $gt -eq 1 ]
 		then
