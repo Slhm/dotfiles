@@ -1,5 +1,7 @@
 # Config files (ubuntu 17.10, i3-gaps, and polybar)
 
+![alt text](https://raw.githubusercontent.com/martinsolheim/dotfiles/master/scrnsht2018.png)
+
 
 ## scripts
 #### bitFetcher
@@ -14,10 +16,11 @@ returns the current iota price.
 
 check https://api.coinmarketcap.com/v1/ticker/ for IDs
 
-
 ### dependencies
 - feh 
 - rofi
 - compton
 - curl
 - jq
+- light
+- zsh
