@@ -1,6 +1,6 @@
 # Config files (ubuntu 17.10, i3-gaps, and polybar)
 
-![alt text](https://raw.githubusercontent.com/martinsolheim/dotfiles/master/scrnsht2018.png)
+![screen shot](https://raw.githubusercontent.com/MartinSolheim/dotfiles/master/scrnsht2018.png)
 
 
 ## scripts
