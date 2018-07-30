@@ -1,0 +1,23 @@
+#!/bin/bash
+
+a=$1
+#echo Q: should $a "${@:2}"
+#echo $(($RANDOM % 5))
+
+
+case $(($RANDOM % 5)) in
+	0) b="Fuck no, $a should not "${@:2}""
+		;;
+	1) b="$a should probably not "${@:2}""
+		;;
+	2) b="whether $a "${@:2}" or not, really doesnt matter"
+		;;
+	3) b="$a wants to "${@:2}"?  ->  sounds like a good idea, dude"
+		;;
+	4) b="$a absolutly have to "${@:2}", lol"
+		;;
+	*) b="Wild card. if the next number you see is even -> do it. if its odd -> dont do it."
+esac
+
+echo $b
+exit
