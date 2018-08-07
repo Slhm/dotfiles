@@ -13,7 +13,9 @@ fetches crypto prices from coinmarketcaps api.
 returns the current iota price.
 
 
-'iota -c' returns the 24h % change as well. 'iota -c -p' returns the name, price, and % change in polybar color formatting.
+'./bitFetcher iota -c' returns the 24h % change as well. 
+
+'./bitFetcher iota -c -p' returns the name, price, and % change in polybar color formatting.
 
 check https://api.coinmarketcap.com/v1/ticker/ for IDs
 
@@ -25,12 +27,13 @@ example
 >i absolutly have to get another beer, lol
 ```
 first arg is the first word -> the person(I, martin, satan, etc)
+
 second arg is everything after -> the proposal(get another beer, go to bed, etc)
-kind of buggy grammar for certain combinations but its supposed to be a joke anyway.
 
 #
 
 font: Hack Regular
+
 zsh theme: agnoster
 
 ### dependencies
