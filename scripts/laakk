@@ -1,9 +1,10 @@
 #!/bin/bash
 
-IMG=/tmp/lol.png
-import -window root $IMG
-convert $IMG  -spread 5 $IMG
+#IMG=/tmp/lol.png
+IMG=~/Pictures/Wallpapers/i3wm-logo.png
+#import -window root $IMG
+#convert $IMG  -spread 5 $IMG
 
 i3lock -i $IMG -f
 
-rm $IMG
+#rm $IMG
