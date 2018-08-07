@@ -3,6 +3,20 @@
 
 ![screen shot](https://raw.githubusercontent.com/MartinSolheim/dotfiles/master/scrnsht2018-2.png)
 
+font: Hack Regular
+
+zsh theme: agnoster
+
+### dependencies
+- feh 
+- rofi
+- compton
+- jq(for json parsing in the bitFetcher script)
+- light
+- zsh
+- elder futhark font -> https://profont.net/fonts/elder-futhark-font-download.html
+- awesome font 5
+
 
 ## scripts
 #### bitFetcher
@@ -29,19 +43,3 @@ example
 first arg is the first word -> the person(I, martin, satan, etc)
 
 second arg is everything after -> the proposal(get another beer, go to bed, etc)
-
-#
-
-font: Hack Regular
-
-zsh theme: agnoster
-
-### dependencies
-- feh 
-- rofi
-- compton
-- jq(for json parsing in the bitFetcher script)
-- light
-- zsh
-- elder futhark font -> https://profont.net/fonts/elder-futhark-font-download.html
-- awesome font 5
