@@ -222,16 +222,19 @@ bar-empty-foreground = ${colors.foreground-alt}
 type = custom/script
 interval = 300
 exec = ~/.config/polybar/bitFetcher iota -c -p
+click-left = ~/.config/polybar/launchWeb https://coinmarketcap.com/currencies/iota
 
 [module/bitFetcher]
 type = custom/script
 interval = 300
 exec =  ~/.config/polybar/bitFetcher bitcoin -c -p
+click-left = ~/.config/polybar/launchWeb https://coinmarketcap.com/currencies/bitcoin/
 
 [module/rippleFetch]
 type = custom/script
 interval = 300
 exec = ~/.config/polybar/bitFetcher ripple -c -p
+click-left = ~/.config/polybar/launchWeb https://coinmarketcap.com/currencies/ripple
 
 [module/bat]
 type = custom/script
@@ -317,7 +320,7 @@ label = %date%%time%
 [module/volume]
 type = internal/volume
 
-;format-volume = <label-volume> <bar-volume>
+;format-volume = <ramp-volume> <bar-volume>
 ;label-volume = VOL
 
 label-volume =  %percentage%%
@@ -362,6 +365,9 @@ format-charging = <animation-charging> <label-charging>
 
 format-discharging = <ramp-capacity> <label-discharging>
 ;format-discharging-underline = ${self.format-charging-underline}
+
+label-charging = ^ %percentage%%
+label-discharging = v %percentage%%
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}

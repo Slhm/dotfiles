@@ -1,5 +1,5 @@
 # ᛁᛊᚨ theme (v0.1)
-# 
+# e 
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1)
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -14,7 +14,7 @@ bindsym $mod+l exec $HOME/.config/i3/laakk
 
 
 #wallpaper
-exec --no-startup-id feh --bg-fill $HOME/Pictures/Wallpapers/fogForest.jpg
+exec --no-startup-id feh --bg-fill $HOME/Pictures/Wallpapers/fogForest.png
 
 #start up software
 exec --no-startup-id $HOME/drit/pia.sh

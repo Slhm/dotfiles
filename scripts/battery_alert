@@ -1,0 +1,26 @@
+#!/bin/bash
+
+battery_percent=$(acpi -b | grep -P -o '[0-9]+(?=%)')
+charging=$(acpi -b | grep Dis | wc -l)
+aniDone=0
+
+#echo "$battery_percent%"
+#0 is charging
+if [[ $charging == 1 ]]
+then
+	#greater than 15%
+	if [[ $battery_percent -gt 15 ]]
+	then
+		echo -e "%{F#0f0} $battery_percent%"
+		
+
+	#less than 15%
+	elif [[ $battery_percent -le 15 ]]
+	then
+		echo -e "%{F#f00}  BELOW 15%"
+		#zenity --info --text='Battery under $battery_percent'
+	fi
+fi
+	#else
+	#for [[ int i = 0; i < 3; i++ ]] 
+	#echo "$battery_percent% ═E"
