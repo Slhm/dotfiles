@@ -1,7 +1,7 @@
 # Config files (ubuntu 17.10, i3-gaps, and polybar)
 #todo: music player in polybar. prob mpd.
 
-![screen shot](https://raw.githubusercontent.com/MartinSolheim/dotfiles/master/scrnsht2018-2.png)
+![screen shot](https://github.com/MartinSolheim/dotfiles/raw/master/2018-11-01-18:47:56.png)
 
 font: Hack Regular
 
@@ -27,9 +27,7 @@ fetches crypto prices from coinmarketcaps api.
 returns the current iota price.
 
 
-'./bitFetcher iota -c' returns the 24h % change as well. 
-
-'./bitFetcher iota -c -p' returns the name, price, and % change in polybar color formatting.
+'./bitFetcher iota -c' returns the current price and 24h % change. 
 
 check https://api.coinmarketcap.com/v1/ticker/ for IDs
 
