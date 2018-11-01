@@ -23,11 +23,9 @@ function a(){
 	}
 
 	console.log("r1: " + r1 + " r2: " + r2);
-	//console.log("rOne: " + rOne);
-	//console.log(Math.random());
 
 	if(rOne) r1St += " ";
-	//onsole.log(r1St + "  " + ar2[i % 4]);
+	console.log(r1St + "  " + ar2[i % 4]);
 	console.log(r1St + "|¯¯¯\\");
 	console.log(r1St + "|___/");
 	console.log(r1St + "  " + ar[i % 4]);
