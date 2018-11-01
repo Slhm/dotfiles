@@ -67,10 +67,15 @@ set $workspace9 "9"
 set $workspace10 "10"
 
 #i3-gaps stuff
-gaps inner 10
-gaps outer 1
+gaps inner 30
+gaps outer 5
 #smart_gaps on
 new_window pixel
+#new_float_border 5
+
+#workspace_layout pixel
+#default_border pixel 5
+#default_floating_border pixel 5
 
 bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu'
 #bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 500 -opacity "80" -bw 0 -bc "$color00" -bg "$color01" -fg "$color07" -hlbg "$color09" -columns 2 -hlfg "#9575cd"

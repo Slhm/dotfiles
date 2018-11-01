@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#IMG=/tmp/lol.png
-IMG=~/Pictures/Wallpapers/i3wm-logo.png
+IMG=~/github/dotfiles/resources/i3wm-logo2.png
+#IMG=~/Pictures/Wallpapers/lockscreen.png
 #import -window root $IMG
 #convert $IMG  -spread 5 $IMG
 

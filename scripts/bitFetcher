@@ -1,11 +1,6 @@
 #! /bin/bash
 export LC_NUMERIC="en_US.UTF-8"
 
-#bitFetcher is a command line script for fetching crypto prices and percent changes
-#first argument is the id of the chosen crypto, usually the name in lowercase
-#add -c as second argument returns the percent change for the last 24h
-#add -p as third arg for polybar percent change color
-
 #no argument returns bitcoin price
 if [ $# -eq 0 ]
 then
@@ -13,23 +8,41 @@ then
 else
 	val=$1
 	chV=$2
-	poly=$3
 fi
 
 #first argument returns a chose cryptos price
 if [ $# -le 1 ]
 then
-	curl -sS 'https://api.coinmarketcap.com/v1/ticker/' | jq --arg val1 "$val" '.[] | select(.id == $val1) | .price_usd' | egrep -o '[0-9,.]{2,4}+'
+    if [ $val == "--help" ] 
+    then
+	    echo bitFetcher is a bash script for fetching crypto prices and percent changes from the coinmarketcap api 
+	    echo
+	    echo Dependecies: "jq", for json parsing in bash
+	    echo
+	    echo Usage: bitFetcher [CRYPTO-ID] [OPTION]
+	    echo Example: ./bitFetcher iota -c
+	    echo
+	    echo First argument is the id of the chosen crypto, usually the name in lowercase
+	    echo Check https://api.coinmarketcap.com/v1/ticker/ for IDs
+	    echo If no argument is given, it will return the bitcoin price
+	    echo
+	    echo Flags available:
+	    echo -c '			' includes 24h percent change
+	    echo -p '			' includes 24h percent change for polybar color format
+    else
+    	curl -sS 'https://api.coinmarketcap.com/v1/ticker/' | jq --arg val1 "$val" '.[] | select(.id == $val1) | .price_usd' | egrep -o '[0-9,.]{2,4}+'
+    fi
 
-# '-c' as second argument return the percent change last 24h 
-elif [ "$chV" == "-c" ]
+# '-c' or '-p' as second argument return the percent change last 24h 
+
+elif [ $chV == -c ] || [ $chV == -p ]
 then
 	pr=$(curl -sS 'https://api.coinmarketcap.com/v1/ticker/' | jq --arg val1 "$val" '.[] | select(.id == $val1) | .price_usd' | egrep -o '[0-9,.]{2,4}+')
 	ch=$(curl -sS 'https://api.coinmarketcap.com/v1/ticker/' | jq --arg val1 "$val" '.[] | select(.id == $val1) | .percent_change_24h' | egrep -o '[0-9,.-]{2,4}+')
 
 	price=$(printf "%.3f" "$pr")
 	gt=$(echo "$ch > 0" | bc -q)
-	if [[ $poly == "-p" ]]
+	if [ $chV == -c ]
 	then
 		if [ $gt -eq 1 ]
 		then
@@ -37,7 +50,8 @@ then
 		else
 			echo -e "$val: "\$"$price %{F#f00} $ch%"
 		fi
-	else
+	elif [ $chV == -p ]
+	then
 		GREEN='\033[0;032m'
 		RED='\033[0;031m'
 		NC='\033[0m'
