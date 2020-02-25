@@ -64,7 +64,7 @@ font-7 = FontAwesome:size=10;1
 modules-left = i3
 ;modules-center = mpd date
 modules-center = date
-modules-right = bitFetcher iotafetcher volume wlan eth battery powermenu
+modules-right = bitFetcher iotafetcher pulseaudio wlan eth battery powermenu
 ;modules-right = bitFetcher volume memory cpu battery eth wlan
 
 tray-position = right
@@ -317,12 +317,14 @@ time-alt = %H:%M:%S
 
 label = %date%%time%
 
-[module/volume]
-type = internal/volume
+[module/pulseaudio]
+type = internal/pulseaudio
 
 ;format-volume = <ramp-volume> <bar-volume>
 ;label-volume = VOL
 
+sink = alsa_output.pci-0000_00_09.2.analog-stereo
+use-ui-max = true
 label-volume =  %percentage%%
 ;label-volume = %percentage%%
 format-volume = <label-volume>
@@ -334,6 +336,7 @@ format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
 ramp-volume-0 = 🔈
+;ramp-volume-0 = HØYT
 ramp-volume-1 = 🔉
 ramp-volume-2 = 🔊
 
