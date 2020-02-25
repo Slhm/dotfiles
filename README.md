@@ -1,4 +1,4 @@
-# Config files (ubuntu 17.10, i3-gaps, and polybar)
+# Config files (ubuntu 18.04, i3-gaps, and polybar)
 #todo: music player in polybar. prob mpd.
 
 ![screen shot](https://github.com/MartinSolheim/dotfiles/raw/master/2018-11-01-18:47:56.png)
@@ -12,9 +12,9 @@ zsh theme: agnoster
 - rofi
 - compton
 - jq(for json parsing in the bitFetcher script)
-- light
+- light (https://github.com/haikarainen/light)
 - zsh
-- elder futhark font -> https://profont.net/fonts/elder-futhark-font-download.html
+- elder futhark font -> https://www.dafont.com/elder-futhark.font
 - awesome font 5
 
 
