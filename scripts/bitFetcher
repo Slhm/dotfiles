@@ -10,7 +10,7 @@ else
 	chV=$2
 fi
 
-#first argument returns a chose cryptos price
+#first argument returns a chosen cryptos price
 if [ $# -le 1 ]
 then
     if [ $val == "--help" ] 
@@ -18,6 +18,7 @@ then
 	    echo bitFetcher is a bash script for fetching crypto prices and percent changes from the coinmarketcap api 
 	    echo
 	    echo Dependecies: "jq", for json parsing in bash
+	    echo ubuntu install: sudo apt install jq
 	    echo
 	    echo Usage: bitFetcher [CRYPTO-ID] [OPTION]
 	    echo Example: ./bitFetcher iota -c

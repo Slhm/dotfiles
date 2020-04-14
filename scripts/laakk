@@ -1,10 +1,13 @@
 #!/bin/bash
 
-IMG=~/github/dotfiles/resources/i3wm-logo2.png
-#IMG=~/Pictures/Wallpapers/lockscreen.png
-#import -window root $IMG
-#convert $IMG  -spread 5 $IMG
-
-i3lock -i $IMG -f
-
-#rm $IMG
+if [ $1 == --fancy ] || [ $1 == -f ]
+then
+	IMG=~/Pictures/Wallpapers/lockscreen.png
+	import -window root $IMG
+	convert $IMG  -spread 5 $IMG
+	i3lock -i $IMG -f
+	rm $IMG
+else
+	IMG=~/github/dotfiles/resources/i3wm-logo2.png
+	i3lock -i $IMG -f
+fi
