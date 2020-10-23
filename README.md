@@ -1,7 +1,6 @@
 # Config files (ubuntu 18.04, i3-gaps, and polybar)
-#todo: music player in polybar. prob mpd.
 
-![screen shot](https://github.com/MartinSolheim/dotfiles/raw/master/2018-11-01-18:47:56.png)
+![screen shot](https://raw.githubusercontent.com/Slhm/dotfiles/master/2018-11-01-18%3A47%3A56.png)
 
 font: Hack Regular
 
@@ -19,7 +18,7 @@ zsh theme: agnoster
 
 
 ## scripts
-#### bitFetcher
+#### bitFetcher (currently broken by the dead api. ill fix it eventually)
 fetches crypto prices from coinmarketcaps api.
 ```
 ./bitFetcher iota
@@ -32,12 +31,11 @@ returns the current iota price.
 check https://api.coinmarketcap.com/v1/ticker/ for IDs
 
 #### should
-lol
-example
+Magic 8ball script.
 ```
-./should i get another beer
->i absolutly have to get another beer, lol
+./should i get another coffee
+>i absolutly have to get another coffee, lol
 ```
-first arg is the first word -> the person(I, martin, satan, etc)
+First arg is the subject -> (I, martin, santa, etc)
 
-second arg is everything after -> the proposal(get another beer, go to bed, etc)
+Everything after is the proposal -> (get another beer, go to bed, etc)
