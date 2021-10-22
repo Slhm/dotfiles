@@ -33,8 +33,8 @@ check https://api.coinmarketcap.com/v1/ticker/ for IDs
 #### should
 Magic 8ball script.
 ```
-./should i get another coffee
->i absolutly have to get another coffee, lol
+>./should i get another coffee
+i absolutly have to get another coffee, lol
 ```
 First arg is the subject -> (I, martin, santa, etc)
 
