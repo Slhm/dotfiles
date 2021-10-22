@@ -16,7 +16,7 @@ case $(($RANDOM % 5)) in
 		;;
 	4) b="$a absolutly have to "${@:2}", lol"
 		;;
-	*) b="Wild card. if the next number you see is even -> do it. if its odd -> dont do it."
+	*) b="Something went wrong :( Try again."
 esac
 
 echo $b
