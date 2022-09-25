@@ -1,6 +1,6 @@
 # Config files (ubuntu 18.04, i3-gaps, and polybar)
 
-![screen shot](https://raw.githubusercontent.com/Slhm/dotfiles/master/2018-11-01-18%3A47%3A56.png)
+![screen shot](https://raw.githubusercontent.com/Slhm/dotfiles/master/screenshot.png)
 
 font: Hack Regular
 
