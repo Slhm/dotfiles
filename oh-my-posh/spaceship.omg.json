@@ -34,7 +34,7 @@
       },
       {
         "alignment": "left",
-        "newline": true,
+        "newline": false,
         "segments": [
           {
             "foreground": "lightGreen",
